@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import "./Student.css";
+import "./Util.css";
 
 function Student() {
     const [studentList, setStudentList] = useState(() => []);
@@ -37,15 +37,17 @@ function Student() {
     };
     return (
         <div>
+            <h1>List of Students</h1>
             {studentList.map(student => {
                 return (
-                    <div className="student-table">
+                    <div className="table">
                         <span className="m p">{student.ID}</span>
                         <span className="m p">{student.FirstName}</span>
                         <span className="m p">{student.LastName}</span>
                     </div>
                 );
             })}
+            <h4>Add a new Student</h4>
             <form>
                 <input
                     type="text"
