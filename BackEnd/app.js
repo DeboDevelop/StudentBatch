@@ -24,6 +24,32 @@ const app = express();
 app.use(express.json());
 
 //Routes
+router.get("/student", (req, res) => {
+    let sql = "SELECT * FROM Student";
+    let query = db.query(sql, (err, result) => {
+        if (err) {
+            res.status(500).json({ error: err });
+        } else if (result) {
+            res.status(200).json(result);
+        } else {
+            res.status(400).json({ message: "Bad requiest" });
+        }
+    });
+});
+
+router.get("/batch", (req, res) => {
+    let sql = "SELECT * FROM Batch";
+    let query = db.query(sql, (err, result) => {
+        if (err) {
+            res.status(500).json({ error: err });
+        } else if (result) {
+            res.status(200).json(result);
+        } else {
+            res.status(400).json({ message: "Bad requiest" });
+        }
+    });
+});
+
 router.post("/student", (req, res) => {
     if (
         req.body.lastname === null ||
