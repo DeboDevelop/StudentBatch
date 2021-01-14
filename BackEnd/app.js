@@ -64,19 +64,6 @@ router.get("/studentbatch", (req, res) => {
     });
 });
 
-router.get("/batch", (req, res) => {
-    let sql = "SELECT * FROM Batch";
-    let query = db.query(sql, (err, result) => {
-        if (err) {
-            res.status(500).json({ error: err });
-        } else if (result) {
-            res.status(200).json(result);
-        } else {
-            res.status(400).json({ message: "Bad requiest" });
-        }
-    });
-});
-
 router.post("/student", (req, res) => {
     if (
         req.body.lastname === null ||
@@ -126,7 +113,7 @@ router.post("/join", (req, res) => {
 
 app.use("/", router);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
     console.log("Server started on port 3000");
