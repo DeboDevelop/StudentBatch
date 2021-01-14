@@ -75,3 +75,15 @@ CREATE TABLE Student (
 5.  Route: /join?batch=someId&student=someId
     Method: POST
     Description: Add a student to a batch
+
+## Getting started for the frontend
+
+1. cd into the FrontEnd directory
+
+2. install the node modules
+
+3. Make sure taht the backend is running.
+
+4. run `npm start`
+
+5. Use the dashboard to interact with the database.
