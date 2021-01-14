@@ -1,0 +1,14 @@
+.student-table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.m {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.p {
+    padding: 5px;
+}

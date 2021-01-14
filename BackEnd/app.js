@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mysql = require("mysql");
 const router = express.Router();
+var cors = require("cors");
 
 // Create connection
 const db = mysql.createConnection({
@@ -22,6 +23,8 @@ db.connect(err => {
 
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 
 //Routes
 router.get("/student", (req, res) => {
@@ -81,6 +84,7 @@ router.post("/student", (req, res) => {
         ")";
     let query = db.query(sql, (err, result) => {
         if (err) {
+            console.log(err);
             res.status(500).json({ error: err });
         } else if (result) {
             res.status(200).json({ message: "Student Added" });
@@ -116,5 +120,5 @@ app.use("/", router);
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
-    console.log("Server started on port 3000");
+    console.log("Server started on port 8000");
 });
