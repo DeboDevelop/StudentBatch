@@ -1,4 +1,5 @@
 import "./App.css";
+import Addtobatch from "./Components/Addtobatch";
 import Batch from "./Components/Batch";
 import Student from "./Components/Student";
 
@@ -7,6 +8,7 @@ function App() {
         <div className="App">
             <Student />
             <Batch />
+            <Addtobatch />
         </div>
     );
 }
